@@ -12,6 +12,7 @@
   --color-accent: var(--accent);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-lora);
 }
 
 /* Force light theme at all times per brand requirements */
@@ -40,4 +41,67 @@ html, body {
 
 .muted {
   @apply text-black/60 dark:text-white/70;
+}
+
+/* Offset in-page anchors so content isn't hidden behind fixed header */
+@layer utilities {
+  .anchor-offset {
+    scroll-margin-top: 80px; /* header height + spacing */
+  }
+}
+
+/* Global smooth scrolling for in-page anchors */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Subtle back-and-forth pan using transform */
+@keyframes hero-pan-transform {
+  0% {
+    transform: scale(1.35) translateX(-10%);
+  }
+  50% {
+    transform: scale(1.35) translateX(10%);
+  }
+  100% {
+    transform: scale(1.35) translateX(-10%);
+  }
+}
+
+@layer utilities {
+  .animate-hero-pan-transform {
+    animation: hero-pan-transform 35s ease-in-out infinite;
+    will-change: transform;
+    transform: translateZ(0);
+  }
+}
+
+/* Subtle centered bob for scroll caret */
+@keyframes caret-bob {
+  0% {
+    transform: translateY(4px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-4px);
+  }
+}
+
+@layer utilities {
+  .animate-caret-bob {
+    animation: caret-bob 1.8s ease-in-out infinite;
+    will-change: transform;
+  }
+}
+
+/* Static glow utility */
+@layer utilities {
+  .glow-white {
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.55),
+      0 0 18px rgba(255, 255, 255, 0.35),
+      0 0 36px rgba(255, 255, 255, 0.25);
+  }
 }

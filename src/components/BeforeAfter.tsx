@@ -11,21 +11,46 @@ type BeforeAfterProps = {
 export default function BeforeAfter({ beforeUrl, afterUrl, label }: BeforeAfterProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [percent, setPercent] = useState(50);
+  const [isDragging, setIsDragging] = useState(false);
+
+  const updatePercentFromClientX = (clientX: number) => {
+    if (!containerRef.current) return;
+    const rect = containerRef.current.getBoundingClientRect();
+    const xWithin = clientX - rect.left;
+    const next = Math.min(100, Math.max(0, (xWithin / rect.width) * 100));
+    setPercent(next);
+  };
+
+  const onPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (!containerRef.current) return;
+    setIsDragging(true);
+    try {
+      e.currentTarget.setPointerCapture(e.pointerId);
+    } catch { }
+    updatePercentFromClientX(e.clientX);
+  };
 
   const onPointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
-    if (!containerRef.current || e.buttons === 0) return;
-    const rect = containerRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    setPercent(Math.min(100, Math.max(0, (x / rect.width) * 100)));
+    if (!isDragging) return;
+    updatePercentFromClientX(e.clientX);
+  };
+
+  const onPointerUpOrCancel = (e: React.PointerEvent<HTMLDivElement>) => {
+    setIsDragging(false);
+    try {
+      e.currentTarget.releasePointerCapture(e.pointerId);
+    } catch { }
   };
 
   return (
     <div className="select-none" aria-label={label ?? "Before and after comparison"}>
       <div
         ref={containerRef}
-        className="relative h-72 w-full overflow-hidden rounded-lg border border-black/10 sm:h-96"
-        onPointerDown={onPointerMove}
+        className="relative h-72 w-full overflow-hidden rounded-lg border border-black/10 sm:h-96 touch-none"
+        onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
+        onPointerUp={onPointerUpOrCancel}
+        onPointerCancel={onPointerUpOrCancel}
       >
         {/* Base image (after) */}
         <Image src={afterUrl} alt="After" fill className="object-cover" />

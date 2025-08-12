@@ -1,23 +1,29 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
-
-const navItems: { label: string; href: string }[] = [
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "Before & After", href: "#before-after" },
-  { label: "Testimonials", href: "#testimonials" },
-  { label: "Team", href: "#team" },
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Contact", href: "#contact" },
-];
+import { useEffect, useState } from "react";
+import { navItems } from "@/components/navItems";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Reveal header after slight scroll from the very top
+      const show = window.scrollY > 24;
+      setVisible(show);
+    };
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-black/10 bg-white/80 backdrop-blur">
+    <header
+      className={`fixed inset-x-0 top-0 z-50 w-full border-b border-black/10 bg-white/80 backdrop-blur transition-opacity duration-500 ${visible ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+    >
       <div className="container-default flex h-16 items-center justify-between gap-4">
         <Link href="#" className="flex items-center gap-3">
           <Image src="/logo.svg" alt="O.M. Design Group" width={180} height={48} priority />
