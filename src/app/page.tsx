@@ -243,38 +243,88 @@ export default function Home() {
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {[
             {
-              title: "Full-Service Interior Design",
-              desc: "Turnkey design from concept to installation for renovations and new builds.",
-              icon: "/window.svg",
+              title: "Design & Planning",
+              icon: "📐",
+              items: [
+                "Space Planning",
+                "Lighting Design and Selection",
+                "CAD / Revit / Hand Drawn Renderings",
+              ],
+              link: "/services#design-planning",
             },
             {
-              title: "Furnishing & Styling",
-              desc: "FF&E, custom pieces, art curation, and final styling.",
-              icon: "/file.svg",
+              title: "Renovation & Hospitality",
+              icon: "🏨",
+              items: [
+                "Residential & Commercial Remodeling (Full or Partial)",
+                "Hospitality Design or Redesign",
+              ],
+              link: "/services#renovation-hospitality",
             },
             {
-              title: "Consulting",
-              desc: "Hourly consulting for layout, finishes, and selections.",
-              icon: "/globe.svg",
+              title: "Kitchens, Baths & Details",
+              icon: "🛁",
+              items: [
+                "Appliance and Plumbing Selections",
+                "Cabinetry Designs and Specifications",
+                "Countertops and Edge Details",
+                "Fireplaces & Accent Features",
+                "Tile Designs for Backsplashes and Surrounds",
+                "Doors and Hardware",
+              ],
+              link: "/services#kitchens-baths-details",
+            },
+            {
+              title: "Finishes & Textiles",
+              icon: "🧵",
+              items: [
+                "Custom Home Finish Selection",
+                "Finishes, Colorization and Textures",
+                "Fabric Selections and Colorization",
+                "Window Treatment Design",
+              ],
+              link: "/services#finishes-textiles",
+            },
+            {
+              title: "Furnishings & Decor",
+              icon: "🛋️",
+              items: [
+                "Furniture Selection and Custom Designs",
+                "Rug Selections and Designs",
+                "Art and Accessories Selection",
+                "Bedding, Pillows",
+                "Reupholstering",
+              ],
+              link: "/services#furnishings-decor",
+            },
+            {
+              title: "Procurement & Delivery",
+              icon: "🚚",
+              items: [
+                "Product Ordering, Tracking and Delivery",
+              ],
+              link: "/services#procurement-delivery",
             },
           ].map((s, i) => (
-            <div
+            <Link
               key={i}
-              className="group relative overflow-hidden rounded-2xl border border-black/10 bg-white/95 p-6 shadow-md ring-1 ring-black/5 transition md:p-8 hover:-translate-y-0.5 hover:shadow-lg hover:ring-black/10"
+              href={s.link}
+              aria-label={`View ${s.title} details`}
+              className="group block relative overflow-hidden rounded-2xl border border-black/10 bg-white/95 p-6 shadow-sm ring-1 ring-black/5 transition md:p-8 hover:-translate-y-0.5 hover:shadow-lg hover:ring-black/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/60"
             >
+              <div className="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full bg-accent/10 blur-2xl" aria-hidden />
               <div className="mb-4 h-1.5 w-12 rounded-full bg-accent/90" aria-hidden />
-              <div className="mb-3 flex items-center gap-3">
-                <div className="h-10 w-10 shrink-0 rounded-md bg-black/5 p-2" aria-hidden>
-                  <div className="relative h-full w-full">
-                    <Image src={s.icon} alt="" fill className="object-contain" sizes="40px" />
-                  </div>
+              <div className="mb-4 flex items-center gap-3">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-2xl shadow-sm ring-1 ring-black/10" aria-hidden>
+                  <span aria-hidden>{s.icon}</span>
                 </div>
-                <h3 className="text-xl font-semibold tracking-tight">{s.title}</h3>
+                <h3 className="text-lg md:text-xl font-semibold tracking-tight">{s.title}</h3>
               </div>
-              <p className="text-gray-700 leading-relaxed">
-                {s.desc}
-              </p>
-            </div>
+              <div className="mt-2 flex items-center gap-2 text-accent font-semibold">
+                <span>View details</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4 transition-transform group-hover:translate-x-0.5"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 0 1 1.414 0l5 5a1 1 0 0 1 0 1.414l-5 5a1 1 0 1 1-1.414-1.414L13.586 11H4a1 1 0 1 1 0-2h9.586l-3.293-3.293a1 1 0 0 1 0-1.414Z" clipRule="evenodd" /></svg>
+              </div>
+            </Link>
           ))}
         </div>
       </Section>
