@@ -37,7 +37,7 @@ export default function Header() {
 
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
           {navItems.map((item) => (
-            <Link key={item.href} href={item.href} className="hover:text-accent transition-colors">
+            <Link key={item.href} href={item.href} className="hover:text-accent transition-colors font-raleway">
               {item.label}
             </Link>
           ))}
@@ -63,7 +63,7 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="py-2 hover:text-accent"
+                className="py-2 hover:text-accent font-raleway"
                 onClick={() => setOpen(false)}
               >
                 {item.label}
