@@ -6,7 +6,6 @@ export default function ContactForm() {
     e.preventDefault();
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries());
-    // eslint-disable-next-line no-alert
     alert(`Thanks! We will be in touch.\n\n${JSON.stringify(data, null, 2)}`);
     form.reset();
   };

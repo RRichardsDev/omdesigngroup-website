@@ -45,20 +45,99 @@ export default function Home() {
         backgroundZoom={1.5}
         backgroundZoomMobile={2.6}
       >
-        <div className="grid items-stretch gap-6 md:grid-cols-2">
-          <div className="group relative overflow-hidden rounded-2xl border border-black/10 bg-white/95 p-6 shadow-md ring-1 ring-black/5 transition md:p-8 hover:-translate-y-0.5 hover:shadow-lg hover:ring-black/10">
-            <div className="mb-4 h-1.5 w-12 rounded-full bg-accent/90" aria-hidden />
-            <p className="text-gray-800 text-base leading-relaxed md:text-lg">
-              Founded in 2011, O.M. Design Group is a full-service studio based in New York, working globally. Our work layers
-              natural materials, custom furniture, and curated art to create rooms that feel collected—not decorated.
+        <div className="grid items-stretch gap-6 sm:grid-cols-2 md:grid-cols-3">
+          {/* Welcome */}
+          <div className="group relative overflow-hidden rounded-2xl border border-black/10 bg-white/95 p-6 shadow-md ring-1 ring-black/5 transition hover:-translate-y-0.5 hover:shadow-lg hover:ring-black/10">
+            <div className="mb-3 h-1.5 w-12 rounded-full bg-accent/90" aria-hidden />
+            <h3 className="text-lg font-semibold tracking-tight mb-2">Welcome</h3>
+            <p className="text-gray-800 leading-relaxed">
+              Thank you for visiting. We design with purpose—and with people and planet in mind.
             </p>
           </div>
-          <div className="group relative overflow-hidden rounded-2xl border border-black/10 bg-white/95 p-6 shadow-md ring-1 ring-black/5 transition md:p-8 hover:-translate-y-0.5 hover:shadow-lg hover:ring-black/10">
-            <div className="mb-4 h-1.5 w-12 rounded-full bg-accent/90" aria-hidden />
-            <p className="text-gray-800 leading-relaxed md:text-lg">
-              We collaborate closely with architects, artisans, and builders to deliver a seamless process from concept to
-              installation. Our clients value discretion, craftsmanship, and spaces that stand the test of time.
+
+          {/* Environmental commitment */}
+          <div className="group relative overflow-hidden rounded-2xl border border-black/10 bg-white/95 p-6 shadow-md ring-1 ring-black/5 transition hover:-translate-y-0.5 hover:shadow-lg hover:ring-black/10">
+            <div className="mb-3 h-1.5 w-12 rounded-full bg-accent/90" aria-hidden />
+            <h3 className="text-lg font-semibold tracking-tight mb-2">Responsible by Design</h3>
+            <p className="text-gray-800 leading-relaxed">
+              We prioritize locally sourced goods, U.S.–made products, and green materials—whenever available and within budget.
             </p>
+          </div>
+
+          {/* Philosophy */}
+          <div className="group relative overflow-hidden rounded-2xl border border-black/10 bg-white/95 p-6 shadow-md ring-1 ring-black/5 transition hover:-translate-y-0.5 hover:shadow-lg hover:ring-black/10">
+            <div className="mb-3 h-1.5 w-12 rounded-full bg-accent/90" aria-hidden />
+            <h3 className="text-lg font-semibold tracking-tight mb-2">A Collected Aesthetic</h3>
+            <p className="text-gray-800 leading-relaxed">
+              Rooted in the arts—with a love of architecture, fashion, and travel—we create distinctive spaces that elevate everyday life.
+            </p>
+          </div>
+
+          {/* Collaboration */}
+          <div className="group relative overflow-hidden rounded-2xl border border-black/10 bg-white/95 p-6 shadow-md ring-1 ring-black/5 transition hover:-translate-y-0.5 hover:shadow-lg hover:ring-black/10">
+            <div className="mb-3 h-1.5 w-12 rounded-full bg-accent/90" aria-hidden />
+            <h3 className="text-lg font-semibold tracking-tight mb-2">Client-Centered Process</h3>
+            <p className="text-gray-800 leading-relaxed">
+              Engage as much—or as little—as you like. Your home should reflect your life, guided by our expertise.
+            </p>
+          </div>
+
+          {/* Continuous learning */}
+          <div className="group relative overflow-hidden rounded-2xl border border-black/10 bg-white/95 p-6 shadow-md ring-1 ring-black/5 transition hover:-translate-y-0.5 hover:shadow-lg hover:ring-black/10">
+            <div className="mb-3 h-1.5 w-12 rounded-full bg-accent/90" aria-hidden />
+            <h3 className="text-lg font-semibold tracking-tight mb-2">Always Evolving</h3>
+            <p className="text-gray-800 leading-relaxed">
+              We stay current with advances in materials, fabrics, technology, and the design community at large.
+            </p>
+          </div>
+
+          {/* Experience & trust */}
+          <div className="group relative overflow-hidden rounded-2xl border border-black/10 bg-white/95 p-6 shadow-md ring-1 ring-black/5 transition hover:-translate-y-0.5 hover:shadow-lg hover:ring-black/10">
+            <div className="mb-3 h-1.5 w-12 rounded-full bg-accent/90" aria-hidden />
+            <h3 className="text-lg font-semibold tracking-tight mb-2">Enjoyable, Informed, Trustworthy</h3>
+            <p className="text-gray-800 leading-relaxed">
+              Creating or recreating a space should be a pleasure—grounded in product knowledge and built on trust.
+            </p>
+          </div>
+
+          {/* Invitation */}
+          <div className="group relative overflow-hidden rounded-2xl border border-black/10 bg-white/95 p-6 shadow-md ring-1 ring-black/5 transition hover:-translate-y-0.5 hover:shadow-lg hover:ring-black/10">
+            <div className="mb-3 h-1.5 w-12 rounded-full bg-accent/90" aria-hidden />
+            <h3 className="text-lg font-semibold tracking-tight mb-2">Let’s Talk</h3>
+            <p className="text-gray-800 leading-relaxed">
+              We’d be happy to discuss your design needs and how we can bring your vision to life.
+            </p>
+          </div>
+
+          {/* Membership / Affiliations */}
+          <div className="group relative overflow-hidden rounded-2xl border border-black/10 bg-white/95 p-6 shadow-md ring-1 ring-black/5 transition hover:-translate-y-0.5 hover:shadow-lg hover:ring-black/10">
+            <div className="mb-3 h-1.5 w-12 rounded-full bg-accent/90" aria-hidden />
+            <h3 className="text-lg font-semibold tracking-tight mb-3">Affiliations</h3>
+            <div className="flex items-center gap-4">
+              <div className="relative h-16 w-28">
+                <Image
+                  src="/asid.png"
+                  alt="American Society of Interior Designers (ASID) — Member"
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 768px) 112px, 112px"
+                />
+              </div>
+              <div className="text-gray-800">
+                <div className="font-medium">American Society of Interior Designers</div>
+                <div className="text-sm text-black/70">Proud ASID member</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Attribution tile (last) */}
+          <div className="group relative overflow-hidden rounded-2xl border border-white/30 bg-white/0 p-6 shadow-md ring-1 ring-white/20 transition hover:-translate-y-0.5 hover:shadow-lg md:p-8">
+            <div className="mb-3 h-1.5 w-12 rounded-full bg-accent/90" aria-hidden />
+            <div className="space-y-1 text-white">
+              <div className="text-white/80">Kindest Regards,</div>
+              <div className="text-2xl md:text-3xl font-semibold leading-tight">JoEllen Sessa</div>
+              <div className="text-white/85">Principal & Lead Designer</div>
+            </div>
           </div>
         </div>
       </Section>
@@ -186,7 +265,9 @@ export default function Home() {
               <div className="mb-4 h-1.5 w-12 rounded-full bg-accent/90" aria-hidden />
               <div className="mb-3 flex items-center gap-3">
                 <div className="h-10 w-10 shrink-0 rounded-md bg-black/5 p-2" aria-hidden>
-                  <img src={s.icon} alt="" className="h-full w-full object-contain" />
+                  <div className="relative h-full w-full">
+                    <Image src={s.icon} alt="" fill className="object-contain" sizes="40px" />
+                  </div>
                 </div>
                 <h3 className="text-xl font-semibold tracking-tight">{s.title}</h3>
               </div>
