@@ -76,8 +76,7 @@ export default function TestimonialsPage() {
         backgroundUrl="/testimonials-bg.jpeg"
         backgroundFixed
         backgroundOverlayClassName="bg-black/50"
-        backgroundZoom={1.6}
-        backgroundZoomMobile={2.6}
+        className="min-h-screen"
       >
         <div className="grid gap-4">
           {testimonials.map((t) => (
