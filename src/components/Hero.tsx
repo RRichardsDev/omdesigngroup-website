@@ -61,7 +61,7 @@ export default function Hero() {
         aria-label="Scroll to portfolio"
         className="group absolute bottom-6 left-1/2 z-10 -translate-x-1/2"
       >
-        <span className="flex h-12 w-12 items-center justify-center rounded-full border border-white/50 bg-white/10 text-white backdrop-blur-sm glow-white shadow-[0_8px_30px_rgba(0,0,0,0.25)] transition hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/60">
+        <span className="flex h-12 w-12 items-center justify-center rounded-full border border-white/50 bg-white/10 text-white backdrop-blur-sm animate-glow-white-gold transition hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/60">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"

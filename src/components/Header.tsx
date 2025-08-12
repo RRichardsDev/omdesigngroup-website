@@ -3,21 +3,27 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { navItems } from "@/components/navItems";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [visible, setVisible] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
+    // On non-home pages, show header immediately; on home, reveal after slight scroll
+    if (pathname !== "/") {
+      setVisible(true);
+      return;
+    }
     const handleScroll = () => {
-      // Reveal header after slight scroll from the very top
       const show = window.scrollY > 24;
       setVisible(show);
     };
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [pathname]);
 
   return (
     <header
@@ -25,17 +31,17 @@ export default function Header() {
         }`}
     >
       <div className="container-default flex h-16 items-center justify-between gap-4">
-        <Link href="#" className="flex items-center gap-3">
+        <Link href="/" className="flex items-center gap-3">
           <Image src="/logo.svg" alt="O.M. Design Group" width={180} height={48} priority />
         </Link>
 
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
           {navItems.map((item) => (
-            <a key={item.href} href={item.href} className="hover:text-accent transition-colors">
+            <Link key={item.href} href={item.href} className="hover:text-accent transition-colors">
               {item.label}
-            </a>
+            </Link>
           ))}
-          <a href="#contact" className="btn-primary">Consultation</a>
+          <Link href="/#contact" className="btn-primary">Consultation</Link>
         </nav>
 
         <button
@@ -54,16 +60,16 @@ export default function Header() {
         <div className="md:hidden border-t border-black/10 bg-white">
           <div className="container-default grid gap-2 py-4">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.href}
                 href={item.href}
                 className="py-2 hover:text-accent"
                 onClick={() => setOpen(false)}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
-            <a href="#contact" onClick={() => setOpen(false)} className="btn-primary mt-2 w-full text-center">Consultation</a>
+            <Link href="/#contact" onClick={() => setOpen(false)} className="btn-primary mt-2 w-full text-center">Consultation</Link>
           </div>
         </div>
       ) : null}

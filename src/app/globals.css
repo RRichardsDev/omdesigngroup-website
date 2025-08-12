@@ -4,6 +4,8 @@
   --background: #ffffff;
   --foreground: #0a0a0a;
   --accent: #e0bb4c; /* gold */
+  /* RGB form of accent for translucent shadows */
+  --accent-rgb: 224, 187, 76;
 }
 
 @theme inline {
@@ -103,5 +105,30 @@ html {
       0 0 0 1px rgba(255, 255, 255, 0.55),
       0 0 18px rgba(255, 255, 255, 0.35),
       0 0 36px rgba(255, 255, 255, 0.25);
+  }
+}
+
+/* Animated glow that shifts between white and accent gold */
+@keyframes glow-white-gold {
+  0%, 100% {
+    box-shadow:
+      0 8px 30px rgba(0, 0, 0, 0.25),
+      0 0 0 1px rgba(255, 255, 255, 0.55),
+      0 0 18px rgba(255, 255, 255, 0.35),
+      0 0 36px rgba(255, 255, 255, 0.25);
+  }
+  50% {
+    box-shadow:
+      0 8px 30px rgba(0, 0, 0, 0.25),
+      0 0 0 1px rgba(var(--accent-rgb), 0.55),
+      0 0 18px rgba(var(--accent-rgb), 0.35),
+      0 0 36px rgba(var(--accent-rgb), 0.25);
+  }
+}
+
+@layer utilities {
+  .animate-glow-white-gold {
+    animation: glow-white-gold 2.4s ease-in-out infinite;
+    will-change: box-shadow;
   }
 }

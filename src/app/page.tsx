@@ -4,6 +4,9 @@ import Section from "@/components/Section";
 import BeforeAfter from "@/components/BeforeAfter";
 import Image from "next/image";
 import ContactForm from "@/components/ContactForm";
+import Link from "next/link";
+import { testimonials, truncateText } from "@/data/testimonials";
+import { galleryJobs } from "@/data/gallery";
 
 export default function Home() {
   return (
@@ -14,16 +17,21 @@ export default function Home() {
       {/* Portfolio */}
       <Section id="portfolio" title="Portfolio">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {Array.from({ length: 9 }).map((_, i) => (
-            <div key={i} className="group relative aspect-[4/3] overflow-hidden rounded-lg">
+          {galleryJobs.map((job) => (
+            <Link key={job.slug} href={`/gallery/${job.slug}`} className="group relative block aspect-[4/3] overflow-hidden rounded-lg">
               <Image
-                src={`/portfolio-${i + 1}.jpg`}
-                alt={`Project ${i + 1}`}
+                src={job.coverImage}
+                alt={job.title}
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
-            </div>
+            </Link>
           ))}
+        </div>
+        <div className="mt-8 flex justify-center">
+          <Link href="/gallery" className="btn-primary">
+            View full portfolio
+          </Link>
         </div>
       </Section>
 
@@ -82,11 +90,8 @@ export default function Home() {
         backgroundZoomMobile={2.6}
       >
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          {["A.", "B.", "C."].map((initial, i) => (
-            <figure
-              key={i}
-              className="rounded-xl border border-black/10 bg-white p-6 shadow-md md:p-7"
-            >
+          {testimonials.slice(0, 3).map((t) => (
+            <figure key={t.id} className="rounded-xl border border-black/10 bg-white p-6 shadow-md md:p-7">
               <div className="mb-3 text-accent">
                 <svg
                   width="28"
@@ -100,13 +105,21 @@ export default function Home() {
                 </svg>
               </div>
               <blockquote className="text-lg leading-relaxed text-gray-800 md:text-xl">
-                “O.M. Design Group transformed our home beyond expectation. Every detail felt considered and personal.”
+                {truncateText(t.body)}
               </blockquote>
+              <div className="mt-4">
+                <Link href={`/testimonials#${t.id}`} className="text-accent hover:underline font-semibold">
+                  Read more
+                </Link>
+              </div>
               <figcaption className="mt-5 border-t border-black/10 pt-3 text-sm font-medium text-gray-700">
-                {initial} Parker — Private Residence
+                {t.author}{t.subtitle ? ` — ${t.subtitle}` : ""}
               </figcaption>
             </figure>
           ))}
+        </div>
+        <div className="mt-8 flex justify-center">
+          <Link href="/testimonials" className="btn-primary">View more stories</Link>
         </div>
       </Section>
 
