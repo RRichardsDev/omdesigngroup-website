@@ -207,21 +207,6 @@ export default function Home() {
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {[
             {
-              name: "Henry Richards",
-              role: "Interior Designer",
-              bio: [
-                "British-born and trained in architecture, Henry brings a deep love for interiors that feel as good as they look. He began his career in the UK, where he learned to see space not just as structure, but as story; a perspective that continues to shape his design philosophy today. From scale and form to light, flow, and how people truly live in their homes, every element is approached with intention.",
-                "Now based in sunny Arizona (a far cry from grey skies and drizzle), Henry focuses on high-end residential interiors, blending architectural insight with a passion for organic form, texture, and soul. His aim is to create spaces that are not only beautiful but deeply personal—environments that support the way his clients live, unwind, gather, and grow.",
-                "Outside the studio, Henry is at home with his husband, and their two sparkly, spirited daughters—often surrounded by glitter, half-finished art projects, and a lot of laughter. He loves wandering antique shops, climbing desert trails, and making time for a proper cup of tea.",
-              ],
-            },
-            {
-              name: "Michele Stokes",
-              role: "Office Manager / Vendor Relations",
-              bio:
-                "After twenty five years in the construction sales industry, Michele has a vast knowledge of the industry at large, an expertise in dealing with vendors and incomparable customer service skills.",
-            },
-            {
               name: "JoEllen Sessa",
               role: "Principal & Lead Designer",
               bio: [
@@ -231,10 +216,25 @@ export default function Home() {
               ],
             },
             {
+              name: "Michele Stokes",
+              role: "Office Manager / Vendor Relations",
+              bio:
+                "After twenty five years in the construction sales industry, Michele has a vast knowledge of the industry at large, an expertise in dealing with vendors and incomparable customer service skills.",
+            },
+            {
               name: "Annie Lemon",
               role: "Project Coordinator",
               bio:
                 "Having relocated from Bozeman, Montana, Annie joins the team as an experienced Project Manager. After studying Interior Design at Montana State University, she entered the workforce as a Project Manager for an international supply and logistics company, sourcing premium interior finishes to private residential developments around the world. Since then, she has worked at several notable design firms and takes pride in the relationships she has built with clients, vendors, and other artisans. When not at work, you will likely find Annie on the tennis courts with her husband, and their pups nearby.",
+            },
+            {
+              name: "Henry Richards",
+              role: "Interior Designer",
+              bio: [
+                "British-born and trained in architecture, Henry brings a deep love for interiors that feel as good as they look. He began his career in the UK, where he learned to see space not just as structure, but as story; a perspective that continues to shape his design philosophy today. From scale and form to light, flow, and how people truly live in their homes, every element is approached with intention.",
+                "Now based in sunny Arizona (a far cry from grey skies and drizzle), Henry focuses on high-end residential interiors, blending architectural insight with a passion for organic form, texture, and soul. His aim is to create spaces that are not only beautiful but deeply personal—environments that support the way his clients live, unwind, gather, and grow.",
+                "Outside the studio, Henry is at home with his husband, and their two sparkly, spirited daughters—often surrounded by glitter, half-finished art projects, and a lot of laughter. He loves wandering antique shops, climbing desert trails, and making time for a proper cup of tea.",
+              ],
             },
           ].map((m, i) => (
             <div key={i} className="group relative overflow-hidden rounded-lg border border-black/10">

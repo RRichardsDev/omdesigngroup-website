@@ -31,17 +31,17 @@ export const metadata: Metadata = {
   description:
     "High-end residential and commercial interior design studio. Portfolio, services, and contact.",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.png",
   },
   openGraph: {
     title: "O.M. Design Group",
     description:
       "High-end interior design studio crafting refined, livable spaces.",
-    url: "https://om-design-group.local",
+    url: "https://omdesigngroup-website.vercel.app/",
     siteName: "O.M. Design Group",
     images: [
       {
-        url: "/logo.svg",
+        url: "/logo.png",
         width: 800,
         height: 200,
         alt: "O.M. Design Group",
