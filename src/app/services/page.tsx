@@ -81,8 +81,8 @@ export default function ServicesPage() {
         backgroundUrl="/services.jpeg"
         backgroundFixed
         backgroundOverlayClassName="bg-black/40"
-        backgroundZoom={1.5}
-        backgroundZoomMobile={3.0}
+        backgroundZoom={2.0}
+        backgroundZoomMobile={8.0}
       >
         <div className="grid gap-6">
           {categories.map((cat) => (

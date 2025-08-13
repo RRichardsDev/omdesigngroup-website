@@ -52,7 +52,7 @@ export default function Home() {
             <div className="mb-3 h-1.5 w-12 rounded-full bg-accent/90" aria-hidden />
             <h3 className="text-lg font-semibold tracking-tight mb-2">Welcome</h3>
             <p className="text-gray-800 leading-relaxed">
-              Thank you for visiting. We design with purpose—and with people and planet in mind.
+              Thank you for visiting. We design with purpose and with people and planet in mind.
             </p>
           </div>
 
@@ -61,7 +61,7 @@ export default function Home() {
             <div className="mb-3 h-1.5 w-12 rounded-full bg-accent/90" aria-hidden />
             <h3 className="text-lg font-semibold tracking-tight mb-2">Responsible by Design</h3>
             <p className="text-gray-800 leading-relaxed">
-              We prioritize locally sourced goods, U.S.–made products, and green materials—whenever available and within budget.
+              We prioritize locally sourced goods, U.S. made products, and green materials whenever available and within budget.
             </p>
           </div>
 
@@ -70,7 +70,7 @@ export default function Home() {
             <div className="mb-3 h-1.5 w-12 rounded-full bg-accent/90" aria-hidden />
             <h3 className="text-lg font-semibold tracking-tight mb-2">A Collected Aesthetic</h3>
             <p className="text-gray-800 leading-relaxed">
-              Rooted in the arts—with a love of architecture, fashion, and travel—we create distinctive spaces that elevate everyday life.
+              Rooted in the arts with a love of architecture, fashion, and travel we create distinctive spaces that elevate everyday life.
             </p>
           </div>
 
@@ -79,7 +79,7 @@ export default function Home() {
             <div className="mb-3 h-1.5 w-12 rounded-full bg-accent/90" aria-hidden />
             <h3 className="text-lg font-semibold tracking-tight mb-2">Client-Centered Process</h3>
             <p className="text-gray-800 leading-relaxed">
-              Engage as much—or as little—as you like. Your home should reflect your life, guided by our expertise.
+              Engage as much or as little as you like. Your home should reflect your life, guided by our expertise.
             </p>
           </div>
 
@@ -97,7 +97,7 @@ export default function Home() {
             <div className="mb-3 h-1.5 w-12 rounded-full bg-accent/90" aria-hidden />
             <h3 className="text-lg font-semibold tracking-tight mb-2">Enjoyable, Informed, Trustworthy</h3>
             <p className="text-gray-800 leading-relaxed">
-              Creating or recreating a space should be a pleasure—grounded in product knowledge and built on trust.
+              Creating or recreating a space should be a pleasure grounded in product knowledge and built on trust.
             </p>
           </div>
 
@@ -206,6 +206,19 @@ export default function Home() {
       {/* Team */}
       <Section id="team" title="Team">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {/* Group photo spanning two columns */}
+          <div className="relative overflow-hidden rounded-lg ring-1 ring-black/10 sm:col-span-2 lg:col-span-2">
+            <div className="relative aspect-[16/9]">
+              <Image
+                src="/team-group.png"
+                alt="O.M. Design Group team"
+                fill
+                className="object-cover transform scale-110"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 66vw, 66vw"
+              />
+            </div>
+          </div>
+
           {[
             {
               name: "JoEllen Sessa",
