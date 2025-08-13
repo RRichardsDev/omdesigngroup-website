@@ -206,12 +206,39 @@ export default function Home() {
       <Section id="team" title="Team">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {[
-            { name: "Henry Richards", role: "Principal Designer" },
-            { name: "James Bennett", role: "Design Director" },
-            { name: "Hana Kim", role: "Senior Designer" },
+            {
+              name: "Henry Richards",
+              role: "Interior Designer",
+              bio: [
+                "British-born and trained in architecture, Henry brings a deep love for interiors that feel as good as they look. He began his career in the UK, where he learned to see space not just as structure, but as story; a perspective that continues to shape his design philosophy today. From scale and form to light, flow, and how people truly live in their homes, every element is approached with intention.",
+                "Now based in sunny Arizona (a far cry from grey skies and drizzle), Henry focuses on high-end residential interiors, blending architectural insight with a passion for organic form, texture, and soul. His aim is to create spaces that are not only beautiful but deeply personal—environments that support the way his clients live, unwind, gather, and grow.",
+                "Outside the studio, Henry is at home with his husband, and their two sparkly, spirited daughters—often surrounded by glitter, half-finished art projects, and a lot of laughter. He loves wandering antique shops, climbing desert trails, and making time for a proper cup of tea.",
+              ],
+            },
+            {
+              name: "Michele Stokes",
+              role: "Office Manager / Vendor Relations",
+              bio:
+                "After twenty five years in the construction sales industry, Michele has a vast knowledge of the industry at large, an expertise in dealing with vendors and incomparable customer service skills.",
+            },
+            {
+              name: "JoEllen Sessa",
+              role: "Principal & Lead Designer",
+              bio: [
+                "JoEllen spent two decades involved in the Boston arts and entertainment field. There she honed her expertise in design, spatial organization, customer service and marketing strategies. Her approach to her craft represents a combination of a fresh, clean aesthetic with an intelligently sophisticated edge. As an Allied Member of ASID and Certified Interior Designer, JoEllen possesses a unique ability to encompass her appreciation and enjoyment of the arts, her travels and the influences of fashion and cultures of the world in her design solutions.",
+                "As the Principal of O.M. Design Group, she proudly celebrated ten years of Design Work in November of 2014. The team has worked on projects throughout the Valley and from Nantucket, MA to Telluride, CO. Opening the Design Studio in 2015 has brought a vast variety of options for Clients, from custom furniture to tile, Wallcoverings and architectural features.",
+                "When not in the Studio or out in the field, you can find JoEllen planning an adventure, skiing or spending quality time with LadyBug, the official canine mascot of the team.",
+              ],
+            },
+            {
+              name: "Annie Lemon",
+              role: "Project Coordinator",
+              bio:
+                "Having relocated from Bozeman, Montana, Annie joins the team as an experienced Project Manager. After studying Interior Design at Montana State University, she entered the workforce as a Project Manager for an international supply and logistics company, sourcing premium interior finishes to private residential developments around the world. Since then, she has worked at several notable design firms and takes pride in the relationships she has built with clients, vendors, and other artisans. When not at work, you will likely find Annie on the tennis courts with her husband, and their pups nearby.",
+            },
           ].map((m, i) => (
-            <div key={i} className="rounded-lg border border-black/10 p-4">
-              <div className="relative mb-4 aspect-square overflow-hidden rounded-md">
+            <div key={i} className="group relative overflow-hidden rounded-lg border border-black/10">
+              <div className="relative aspect-square">
                 <Image
                   src={`/team-${i + 1}.jpeg`}
                   alt={m.name}
@@ -219,9 +246,26 @@ export default function Home() {
                   className="object-cover"
                 />
               </div>
-              <div>
-                <h3 className="text-lg font-semibold">{m.name}</h3>
-                <p className="text-gray-600">{m.role}</p>
+              <div className="p-4">
+                <h3 className="text-lg">{m.name}</h3>
+                <p className="text-accent text-sm font-semibold">{m.role}</p>
+              </div>
+              <div className="absolute inset-0 bg-black/60 backdrop-blur-sm opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <div className="flex h-full flex-col p-4 text-white">
+                  <div>
+                    <h3 className="text-lg font-semibold leading-tight">{m.name}</h3>
+                    <p className="text-accent/90 text-sm font-semibold">{m.role}</p>
+                  </div>
+                  <div className="mt-3 grow overflow-y-auto pr-2 space-y-3 no-scrollbar">
+                    {Array.isArray(m.bio) ? (
+                      m.bio.map((paragraph, idx) => (
+                        <p key={idx} className="text-sm leading-relaxed">{paragraph}</p>
+                      ))
+                    ) : (
+                      <p className="text-sm leading-relaxed">{m.bio}</p>
+                    )}
+                  </div>
+                </div>
               </div>
             </div>
           ))}

@@ -32,7 +32,7 @@ export default function Header() {
     >
       <div className="container-default flex h-16 items-center justify-between gap-4">
         <Link href="/" className="flex items-center gap-3">
-          <Image src="/logo.svg" alt="O.M. Design Group" width={180} height={48} priority />
+          <Image src="/logo.png" alt="O.M. Design Group" width={180} height={48} priority />
         </Link>
 
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
