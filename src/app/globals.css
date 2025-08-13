@@ -3,7 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #0a0a0a;
-  --accent: #e0bb4c; /* gold */
+  --accent: #577b8a; /* gold */
   /* RGB form of accent for translucent shadows */
   --accent-rgb: 224, 187, 76;
 }

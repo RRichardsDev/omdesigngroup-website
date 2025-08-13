@@ -339,7 +339,7 @@ export default function Home() {
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-2xl shadow-sm ring-1 ring-black/10" aria-hidden>
                   <span aria-hidden>{s.icon}</span>
                 </div>
-                <h3 className="text-lg md:text-xl font-semibold tracking-tight">{s.title}</h3>
+                <h3 className="text-lg md:text-xl tracking-tight">{s.title}</h3>
               </div>
               <div className="mt-2 flex items-center gap-2 text-accent font-semibold">
                 <span>View details</span>
