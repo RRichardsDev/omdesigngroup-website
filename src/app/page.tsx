@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Section from "@/components/Section";
 import BeforeAfter from "@/components/BeforeAfter";
 import Image from "next/image";
+import TeamCard from "@/components/TeamCard";
 import ContactForm from "@/components/ContactForm";
 import Link from "next/link";
 import { testimonials, truncateText } from "@/data/testimonials";
@@ -237,37 +238,13 @@ export default function Home() {
               ],
             },
           ].map((m, i) => (
-            <div key={i} className="group relative overflow-hidden rounded-lg border border-black/10">
-              <div className="relative aspect-square">
-                <Image
-                  src={`/team-${i + 1}.jpeg`}
-                  alt={m.name}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-4">
-                <h3 className="text-lg">{m.name}</h3>
-                <p className="text-accent text-sm font-semibold">{m.role}</p>
-              </div>
-              <div className="absolute inset-0 bg-black/60 backdrop-blur-sm opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                <div className="flex h-full flex-col p-4 text-white">
-                  <div>
-                    <h3 className="text-lg font-semibold leading-tight">{m.name}</h3>
-                    <p className="text-accent/90 text-sm font-semibold">{m.role}</p>
-                  </div>
-                  <div className="mt-3 grow overflow-y-auto pr-2 space-y-3 no-scrollbar">
-                    {Array.isArray(m.bio) ? (
-                      m.bio.map((paragraph, idx) => (
-                        <p key={idx} className="text-sm leading-relaxed">{paragraph}</p>
-                      ))
-                    ) : (
-                      <p className="text-sm leading-relaxed">{m.bio}</p>
-                    )}
-                  </div>
-                </div>
-              </div>
-            </div>
+            <TeamCard
+              key={i}
+              name={m.name}
+              role={m.role}
+              bio={m.bio as string | string[]}
+              imageSrc={`/team-${i + 1}.jpeg`}
+            />
           ))}
         </div>
       </Section>
