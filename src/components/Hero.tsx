@@ -33,7 +33,7 @@ export default function Hero() {
 
       {/* Centered stationary logo overlay */}
       <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
-        <div className="rounded-md bg-white/0 backdrop-blur-md ring-1 ring-white/30 p-4 md:p-6 shadow-[0_8px_30px_rgba(0,0,0,0.25)] border border-white">
+        <div className="rounded-md bg-black/50 backdrop-blur-md ring-1 ring-white/30 p-4 md:p-6 shadow-[0_8px_30px_rgba(0,0,0,0.25)] border border-white">
           <Image
             src="/logo.png"
             alt="O.M. Design Group"
