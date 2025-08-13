@@ -275,7 +275,7 @@ export default function Home() {
             },
             {
               title: "Renovation & Hospitality",
-              icon: "🏨",
+              icon: "🔨",
               items: [
                 "Residential & Commercial Remodeling (Full or Partial)",
                 "Hospitality Design or Redesign",
