@@ -258,8 +258,8 @@ export default function Home() {
         backgroundUrl="/services.jpeg"
         backgroundFixed
         backgroundOverlayClassName="bg-black/40"
-        backgroundZoom={1.5}
-        backgroundZoomMobile={3.4}
+        backgroundZoom={2.0}
+        backgroundZoomMobile={8.0}
       >
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {[

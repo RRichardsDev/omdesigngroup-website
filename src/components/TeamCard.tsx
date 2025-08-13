@@ -27,8 +27,9 @@ export default function TeamCard({
     }
   };
 
-  const stop = (event: MouseEvent) => {
+  const handleOverlayClick = (event: MouseEvent) => {
     event.stopPropagation();
+    if (isOpen) setIsOpen(false);
   };
 
   return (
@@ -56,12 +57,12 @@ export default function TeamCard({
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto")
         }
-        onClick={stop}
+        onClick={handleOverlayClick}
       >
         <button
           type="button"
           aria-label="Close bio"
-          className="absolute right-3 top-3 rounded-full bg-white/10 p-1 text-white hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
+          className="absolute right-3 top-3 rounded-full bg-white/10 p-1 text-white hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 md:hidden"
           onClick={() => setIsOpen(false)}
         >
           <svg
