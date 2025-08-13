@@ -80,8 +80,8 @@ export default function TeamCard({
         </button>
         <div className="flex h-full flex-col p-4 text-white">
           <div>
-            <h3 className="text-lg font-semibold leading-tight">{name}</h3>
-            <p className="text-accent/90 text-sm font-semibold">{role}</p>
+            <h3 className="text-lg font-semibold leading-tight py-2">{name}</h3>
+            <p className="text-accent/90 text-sm font-semibold bg-white rounded-[15px] p-[3px] w-min whitespace-nowrap">{role}</p>
           </div>
           <div className="mt-3 grow overflow-y-auto pr-2 space-y-3 no-scrollbar">
             {Array.isArray(bio) ? (
