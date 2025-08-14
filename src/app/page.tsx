@@ -389,7 +389,7 @@ export default function Home() {
         <div className="container-default flex flex-col items-center justify-between gap-3 text-sm text-black/60 sm:flex-row">
           <p>© {new Date().getFullYear()} O.M. Design Group. All rights reserved.</p>
           <p>
-            Handcrafted with <span className="text-accent">●</span> in New York.
+            Handcrafted with <span className="text-accent">♥</span> in New York.
           </p>
         </div>
       </footer>
