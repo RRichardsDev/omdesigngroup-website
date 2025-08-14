@@ -43,8 +43,8 @@ export default function Home() {
         backgroundUrl="/about.jpeg"
         backgroundFixed
         backgroundOverlayClassName="bg-black/40"
-        backgroundZoom={1.5}
-        backgroundZoomMobile={2.6}
+        backgroundZoom={2.0}
+        backgroundZoomMobile={8.0}
       >
         <div className="grid items-stretch gap-6 sm:grid-cols-2 md:grid-cols-3">
           {/* Welcome */}
